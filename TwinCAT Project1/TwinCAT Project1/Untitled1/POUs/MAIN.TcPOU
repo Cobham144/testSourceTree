@@ -21,6 +21,15 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
+IF bLoadPizza THEN
+	bLoadPizza := FALSE;
+	bPizzaOnDeck := TRUE;
+END_IF
+
+IF bRemovePizza THEN
+	bRemovePizza := FALSE;
+	bPizzaDone := FALSE;
+END_IF
 
 IF bPizzaOnDeck AND NOT bPizzaInOven THEN
 	bPizzaOnDeck := FALSE;
