@@ -1,79 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.3">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4019.2">
   <POU Name="MAIN" Id="{f9a624a7-3b5f-4807-8bd7-72971c0fcf58}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
-	bPizzaInOven : BOOL;
-	bPizzaOnDeck : BOOL;
-	bPizzaDone	 : BOOL;
-	fbMyTimer	 : TON;
-	fbMyTrigger_RTRIG : R_TRIG;
+	fbMyPizzaOven : FB_PIZZA_OVEN;
 	
 	bLoadPizza   : BOOL;
-	bRemovePizza : BOOL;
+	bRemovePizza : BOOL;	
 	
-	iState		: DINT;
-	sStateDesc	: STRING;
-	
-	bBuzzer 	 : BOOL;
-	iTotalPizzasCooked	: UDINT;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
-IF bLoadPizza THEN
-	bLoadPizza := FALSE;
-	bPizzaOnDeck := TRUE;
-END_IF
 
-IF bRemovePizza THEN
-	bRemovePizza := FALSE;
-	bPizzaDone := FALSE;
-END_IF
-
-IF bPizzaOnDeck AND NOT bPizzaInOven THEN
-	bPizzaOnDeck := FALSE;
-	bPizzaInOven := TRUE;
-END_IF
-
-CASE iState OF
-	
-// wait for pizza in Oven
-	0: 
-		sStateDesc := 'Waiting on Pizza now';
-		IF bPizzaInOven THEN
-			iState := 10;
-		END_IF
-	
-// we got a pizza in the oven!		
-	10: 
-		sStateDesc := 'Baking that Pizza now';
-		fbMyTimer(IN:=TRUE,PT := T#3S);
-		IF fbMyTimer.Q THEN
-			fbMyTimer(IN:=FALSE);
-			iState := 20;
-		END_IF
-	
-// can we move the pizza out of the oven?
-	20:
-		sStateDesc := 'Pizza is done!';
-		IF NOT bPizzaDone THEN 
-			bPizzaDone := TRUE;
-			bPizzaInOven := FALSE;
-			bBuzzer := FALSE;
-			iState := 30;
-		ELSE 
-			bBuzzer := TRUE;
-			
-		END_IF
-	
-	30:
-		sStateDesc := 'Invalid State';
-		iTotalPizzasCooked := iTotalPizzasCooked + 1;
-		iState := 0;
-	ELSE;
-		
-END_CASE]]></ST>
+fbMyPizzaOven(bLoadPizza:= bLoadPizza, bRemovePizza:=bRemovePizza);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
