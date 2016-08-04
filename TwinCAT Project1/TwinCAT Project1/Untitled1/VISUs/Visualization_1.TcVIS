@@ -567,11 +567,8 @@
                     </o>
                     <o>
                       <v n="Id">493260384L</v>
-                      <l n="Value" t="ArrayList" cet="NamedStyleColor">
-                        <o>
-                          <v n="Color">-12337</v>
-                          <v n="CanonicalName">"BasicElement-Alarm-Fill-Color"</v>
-                        </o>
+                      <l n="Value" t="ArrayList" cet="UInt32">
+                        <v>4286578688</v>
                       </l>
                     </o>
                     <o>
@@ -608,7 +605,7 @@
                     </o>
                     <o>
                       <v n="Id">1999528970L</v>
-                      <v n="Value">"&lt;toggle/tap variable&gt;"</v>
+                      <v n="Value">"MAIN.fbMyPizzaOven.bBuzzer"</v>
                     </o>
                     <o>
                       <v n="Id">1649127785L</v>
@@ -2099,10 +2096,10 @@
               <d n="FbMethods" t="CaseInsensitiveHashtable" ckt="String" cvt="Guid">
                 <v>FB_Init</v>
                 <v>78269fd0-4587-44d4-b125-b4475b0ca002</v>
-                <v>FB_Reinit</v>
-                <v>160f6931-1929-4564-994c-8ade32c82c26</v>
                 <v>FB_Exit</v>
                 <v>35f2232c-db05-4b6c-91a2-108745dc8804</v>
+                <v>FB_Reinit</v>
+                <v>160f6931-1929-4564-994c-8ade32c82c26</v>
               </d>
               <v n="FbName">"NotImportant"</v>
               <v n="FbGuid">{89ff18cd-7f61-4e83-a35f-b3fafa06ee6c}</v>
