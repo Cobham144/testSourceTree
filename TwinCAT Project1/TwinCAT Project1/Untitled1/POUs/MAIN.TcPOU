@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4019.2">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.3">
   <POU Name="MAIN" Id="{f9a624a7-3b5f-4807-8bd7-72971c0fcf58}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
 	fbMyPizzaOven : FB_PIZZA_OVEN;
+	fbMyPizzaOven1 : FB_PIZZA_OVEN;
 	
 	bLoadPizza   : BOOL;
 	bRemovePizza : BOOL;	
@@ -13,7 +14,9 @@ END_VAR
     <Implementation>
       <ST><![CDATA[
 
-fbMyPizzaOven(bLoadPizza:= bLoadPizza, bRemovePizza:=bRemovePizza);]]></ST>
+fbMyPizzaOven(bLoadPizza:= bLoadPizza, bRemovePizza:=bRemovePizza);
+
+fbMyPizzaOven1(bLoadPizza:= bLoadPizza, bRemovePizza:=bRemovePizza);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
