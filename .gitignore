@@ -1,2 +1,6 @@
 /**/*.compileinfo
 /**/*.~u
+/**/*.suo
+/**/*.crc
+/**/*.tizip
+/**/*.app
