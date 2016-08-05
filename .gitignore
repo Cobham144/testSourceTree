@@ -1,4 +1,3 @@
-/**/*.compileinfo
 /**/*.~u
 /**/*.suo
 /**/*.crc
@@ -9,3 +8,4 @@
 /**/*.compiled-library
 /**/*.cid
 /**/*.bak
+/**/*.compileinfo
