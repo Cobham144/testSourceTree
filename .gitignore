@@ -5,3 +5,4 @@
 /**/*.tizip
 /**/*.app
 /**/*.tmc
+/**/CurrentConfig.xml
