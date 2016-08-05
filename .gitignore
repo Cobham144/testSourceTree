@@ -6,3 +6,8 @@
 /**/*.app
 /**/*.tmc
 /**/CurrentConfig.xml
+/**/*.plcproj
+/**/*.tpy
+/**/*.compiled-library
+/**/*.TargetDescription.xml
+/**/*.cid
