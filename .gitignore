@@ -5,9 +5,7 @@
 /**/*.tizip
 /**/*.app
 /**/*.tmc
-/**/CurrentConfig.xml
 /**/*.tpy
 /**/*.compiled-library
-/**/*.TargetDescription.xml
 /**/*.cid
 /**/*.bak
