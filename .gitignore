@@ -8,3 +8,4 @@
 /**/*.compiled-library
 /**/*.cid
 /**/*.bak
+/**/*.compileinfo
