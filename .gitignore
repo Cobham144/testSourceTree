@@ -9,3 +9,4 @@
 /**/*.cid
 /**/*.bak
 /**/*.compileinfo
+.gitignore.swp
